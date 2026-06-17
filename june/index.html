@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Himalayan Escape: Scenic 331km motorcycle journey from Kurukshetra to Narkanda on the Hero Xpulse 210. Detailed route guide, rider tips, and planning for the ultimate adventure through Shivalik foothills, pine forests, and Himalayan ridges.">
+    <meta name="keywords" content="Xpulse 210, Himalayan ride, Kurukshetra to Narkanda, Hero MotoCorp, adventure motorcycle, Chail bypass, Hatu Peak, scenic bike routes India">
+    <title>Himalayan Escape • Xpulse 210 Journey</title>
+    
+    <!-- Tailwind CSS via CDN for modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --accent-red: #c2410c;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #c2410c, transparent);
+            border-radius: 3px;
+        }
+
+        .journey-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .journey-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-active {
+            color: #c2410c;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .nav-active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #c2410c;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+            border-left: 5px solid #ca8a04;
+        }
+
+        .stat-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.03);
+        }
+
+        .timeline-dot {
+            box-shadow: 0 0 0 4px #fefce8;
+        }
+
+        .mountain-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('https://picsum.photos/id/1005/2000/1200');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .forest-bg {
+            background-image: linear-gradient(rgba(20, 83, 45, 0.7), rgba(20, 83, 45, 0.85)), url('https://picsum.photos/id/1016/1200/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .road-bg {
+            background-image: linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.75)), url('https://picsum.photos/id/1033/1200/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .peak-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), url('https://picsum.photos/id/160/1200/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .adventure-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .modal {
+            animation: fadeInScale 0.2s ease forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        .metric-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            background-color: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .route-step {
+            position: relative;
+        }
+        
+        .route-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: -20px;
+            width: 3px;
+            background: linear-gradient(#e2e8f0, #cbd5e1);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <!-- NAV -->
+    <nav id="navbar" class="bg-white border-b border-slate-200 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-x-2.5">
+                        <div class="w-11 h-11 bg-gradient-to-br from-orange-700 to-red-700 rounded-2xl flex items-center justify-center shadow-inner">
+                            <i class="fa-solid fa-motorcycle text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-2xl tracking-tighter">Himalayan</span>
+                            <span class="font-semibold text-2xl text-orange-700">Escape</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block px-3 py-1.5 bg-slate-100 rounded-full text-xs font-mono tracking-[2px] text-slate-500">XPULSE 210</div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#overview" class="nav-link hover:text-orange-700 transition-colors">Overview</a>
+                    <a href="#journey" class="nav-link hover:text-orange-700 transition-colors">The Journey</a>
+                    <a href="#xpulse" class="nav-link hover:text-orange-700 transition-colors">Xpulse Advantage</a>
+                    <a href="#manual" class="nav-link hover:text-orange-700 transition-colors">Rider's Manual</a>
+                    <a href="#gallery" class="nav-link hover:text-orange-700 transition-colors">Gallery</a>
+                    <a href="#plan" class="nav-link hover:text-orange-700 transition-colors">Plan Your Trip</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-slate-600 hover:text-orange-700 hover:bg-slate-100 rounded-2xl transition-colors"
+                            aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                    
+                    <button onclick="shareRoute()"
+                            class="hidden sm:flex items-center gap-x-2 px-5 py-2.5 text-sm font-semibold bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-3xl transition-all active:scale-[0.985]">
+                        <i class="fa-solid fa-share-alt mr-1.5"></i>
+                        <span>Share Route</span>
+                    </button>
+                    
+                    <button onclick="window.location.href='#plan'"
+                            class="flex items-center gap-x-2 px-6 py-2.5 text-sm font-semibold bg-orange-700 hover:bg-orange-800 text-white rounded-3xl transition-all active:scale-[0.985] shadow-sm">
+                        <span>Start Planning</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4">
+            <div class="flex flex-col gap-y-1 text-sm">
+                <a href="#overview" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">Overview</a>
+                <a href="#journey" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">The Journey</a>
+                <a href="#xpulse" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">Xpulse Advantage</a>
+                <a href="#manual" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">Rider's Manual</a>
+                <a href="#gallery" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">Gallery</a>
+                <a href="#plan" class="mobile-nav-link px-4 py-3 hover:bg-slate-50 rounded-2xl">Plan Your Trip</a>
+                <div class="pt-3 border-t mt-2">
+                    <button onclick="shareRoute(); document.getElementById('mobile-menu').classList.add('hidden')"
+                            class="w-full flex items-center justify-center gap-x-2 px-5 py-3 text-sm font-semibold border border-slate-300 rounded-3xl">
+                        <i class="fa-solid fa-share-alt"></i> Share this adventure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="mountain-bg h-[100dvh] min-h-[620px] flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-3xl shadow-sm mb-6 border border-white/60">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-map-marked text-orange-700 mr-2"></i>
+                        <span class="text-xs font-bold tracking-[1.5px] text-slate-700">CURATED SCENIC ROUTE</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl lg:text-7xl font-bold tracking-tighter text-white leading-[0.92] mb-4">
+                    HIMALAYAN<br>ESCAPE
+                </h1>
+                <p class="max-w-lg text-2xl md:text-3xl text-white/90 font-light tracking-tight mb-3">
+                    Kurukshetra → Narkanda on the <span class="font-semibold text-orange-300">Xpulse 210</span>
+                </p>
+                
+                <p class="max-w-md text-lg text-white/80 mb-10">
+                    331 km of pure escape. Shivalik foothills, deodar sanctuaries, and ridge-top Himalayan views — 
+                    designed for riders who want the journey, not just the destination.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="document.getElementById('journey').scrollIntoView({ behavior: 'smooth' })" 
+                            class="group flex items-center justify-center gap-x-3 bg-white text-slate-900 hover:bg-amber-50 font-semibold px-8 h-14 rounded-3xl text-base shadow-xl active:scale-[0.985] transition-all">
+                        <span>Explore the full route</span>
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-0.5 transition"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('xpulse').scrollIntoView({ behavior: 'smooth' })" 
+                            class="flex items-center justify-center gap-x-2.5 border border-white/70 hover:bg-white/10 text-white font-medium px-7 h-14 rounded-3xl text-base backdrop-blur transition-all">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <span>Why the Xpulse 210?</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-8 mt-12 text-white/70 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>~9h 15m riding</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-road"></i>
+                        <span>331 km</span>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-x-2">
+                        <i class="fa-solid fa-mountain"></i>
+                        <span>Max 2,700m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
+            <div class="flex flex-col items-center text-white/60 text-xs tracking-widest">
+                <span class="mb-1">SCROLL TO BEGIN</span>
+                <i class="fa-solid fa-chevron-down scroll-indicator"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS / OVERVIEW -->
+    <section id="overview" class="max-w-screen-2xl mx-auto px-8 -mt-8 relative z-10">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 md:p-10">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-8">
+                <div>
+                    <span class="uppercase tracking-[2px] text-xs font-bold text-orange-700">THE ROUTE AT A GLANCE</span>
+                    <h2 class="text-4xl tracking-tight font-bold text-slate-900">331 km of Himalayan soul</h2>
+                </div>
+                <p class="max-w-md text-slate-600">A carefully chosen path that prioritizes shaded forest lanes, ridge-top vistas, and the pure joy of riding over high-speed highways.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Stat 1 -->
+                <div class="stat-card bg-slate-50 border border-slate-100 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-road text-3xl text-orange-600"></i>
+                        <span class="text-xs px-3 py-1 bg-orange-100 text-orange-700 font-bold rounded-2xl">TOTAL</span>
+                    </div>
+                    <div class="text-5xl font-bold tracking-tighter metric-value">331</div>
+                    <div class="text-sm font-medium text-slate-500 mt-1">kilometers</div>
+                    <div class="text-xs text-slate-400 mt-3">~40% forest roads &amp; scenic bypasses</div>
+                </div>
+                
+                <div class="stat-card bg-slate-50 border border-slate-100 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-clock text-3xl text-orange-600"></i>
+                        <span class="text-xs px-3 py-1 bg-orange-100 text-orange-700 font-bold rounded-2xl">RIDING</span>
+                    </div>
+                    <div class="text-5xl font-bold tracking-tighter metric-value">9<span class="text-3xl align-super">h</span> 15<span class="text-3xl align-super">m</span></div>
+                    <div class="text-sm font-medium text-slate-500 mt-1">estimated time</div>
+                    <div class="text-xs text-slate-400 mt-3">Includes photo stops &amp; breaks</div>
+                </div>
+                
+                <div class="stat-card bg-slate-50 border border-slate-100 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-mountain text-3xl text-orange-600"></i>
+                        <span class="text-xs px-3 py-1 bg-orange-100 text-orange-700 font-bold rounded-2xl">TERRAIN</span>
+                    </div>
+                    <div class="text-5xl font-bold tracking-tighter">Mixed</div>
+                    <div class="text-sm font-medium text-slate-500 mt-1">Highway • Forest • Ridge</div>
+                    <div class="mt-3 text-xs">
+                        <span class="inline-block px-2.5 py-px bg-emerald-100 text-emerald-700 rounded">Tarmac 75%</span>
+                        <span class="inline-block px-2.5 py-px bg-amber-100 text-amber-700 rounded ml-1">Gravel/Soft 25%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card bg-slate-50 border border-slate-100 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-thermometer-half text-3xl text-orange-600"></i>
+                        <span class="text-xs px-3 py-1 bg-orange-100 text-orange-700 font-bold rounded-2xl">JUNE</span>
+                    </div>
+                    <div class="flex items-baseline gap-x-1">
+                        <div class="text-5xl font-bold tracking-tighter">12–25</div>
+                        <div class="text-xl font-medium text-slate-400">°C</div>
+                    </div>
+                    <div class="text-sm font-medium text-slate-500">Plains → Peaks</div>
+                    <div class="text-xs text-slate-400 mt-3">Perfect riding weather. Pack a light jacket for evenings at 2,700m.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <span class="text-orange-700 text-xs font-extrabold tracking-[2px]">4 STAGES • ONE EPIC DAY</span>
+                <h2 class="section-header text-5xl tracking-tighter font-bold">The Journey Unfolds</h2>
+            </div>
+            <p class="max-w-sm text-slate-600 mt-3 md:mt-0">Each segment offers a distinct character — from the welcoming foothills to the majestic high ridge finale.</p>
+        </div>
+
+        <!-- Timeline Style Journey -->
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- Section 1 -->
+            <div class="route-step flex gap-6 mb-10">
+                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center z-10">
+                    <span class="font-mono text-emerald-700 text-xl font-bold">01</span>
+                </div>
+                <div class="flex-1 journey-card bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div class="h-2 bg-gradient-to-r from-emerald-600 to-emerald-400"></div>
+                    <div class="p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-x-3">
+                                    <h3 class="text-3xl font-bold tracking-tight">The Foothill Prelude</h3>
+                                </div>
+                                <p class="text-emerald-700 font-semibold mt-1">Kurukshetra → Morni Hills</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-400">~65 km • 1h 45m</div>
+                                <div class="inline-block mt-1 text-[10px] px-3 py-px rounded-full bg-emerald-100 text-emerald-700 font-bold">EASY</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 prose prose-slate max-w-none text-[15px]">
+                            <p>Leave the heat of the plains behind and enter the Shivalik foothills via Panchkula. The moment you start climbing, the temperature drops and the air becomes noticeably fresher. This is the perfect “shake-down” segment to get comfortable with your Xpulse before the higher mountains.</p>
+                        </div>
+                        
+                        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-emerald-700"><i class="fa-solid fa-leaf"></i> <span>The Vibe</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Lush green hills, sharp engaging corners, and the first real sense of escape from the plains.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-emerald-700"><i class="fa-solid fa-water"></i> <span>Highlight</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Tikkar Taal Lake Trail — gentle gravel tracks ideal for testing your setup and building confidence.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-emerald-700"><i class="fa-solid fa-camera"></i> <span>Photo Stop</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Panoramic viewpoints just before Morni village offer sweeping views back toward the plains.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box mt-6 rounded-2xl p-5 text-sm">
+                            <span class="font-bold text-amber-700 flex items-center gap-x-2"><i class="fa-solid fa-lightbulb"></i> XPULSE TIP</span>
+                            <p class="mt-1 text-amber-800">Lower tire pressure by 3–4 PSI once you hit the first gravel near Tikkar Taal. The Xpulse’s 19-inch front wheel loves the extra contact patch on these gentle trails.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 2 -->
+            <div class="route-step flex gap-6 mb-10">
+                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-sky-100 flex items-center justify-center z-10">
+                    <span class="font-mono text-sky-700 text-xl font-bold">02</span>
+                </div>
+                <div class="flex-1 journey-card bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div class="h-2 bg-gradient-to-r from-sky-600 to-sky-400"></div>
+                    <div class="p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-x-3">
+                                    <h3 class="text-3xl font-bold tracking-tight">Into the Pines</h3>
+                                </div>
+                                <p class="text-sky-700 font-semibold mt-1">Morni → Barog</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-400">~85 km • 2h 30m</div>
+                                <div class="inline-block mt-1 text-[10px] px-3 py-px rounded-full bg-sky-100 text-sky-700 font-bold">MODERATE</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 prose prose-slate max-w-none text-[15px]">
+                            <p>Rejoin the main hill highway briefly at Kumarhatti before reaching Barog — your designated “stillness spot”. This is where the real Himalayan character begins. The air is cooler, scented with pine, and the roads start to wind more dramatically.</p>
+                        </div>
+                        
+                        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-sky-700"><i class="fa-solid fa-tree"></i> <span>The Stop</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">30–45 minute break in Barog. The pine-scented silence is perfect for resetting your mind and body before the next push.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-sky-700"><i class="fa-solid fa-wrench"></i> <span>Hero Service</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">PREMIA – SOLAN – RUNWAY MOTO DREAMZ right in Barog. 4.8★ service center. Opens 10am. Perfect quick check-up point.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-sky-700"><i class="fa-solid fa-gas-pump"></i> <span>Fuel</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Last guaranteed fuel stop before the more remote interior segments. Fill up here.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box mt-6 rounded-2xl p-5 text-sm">
+                            <span class="font-bold text-amber-700 flex items-center gap-x-2"><i class="fa-solid fa-lightbulb"></i> XPULSE TIP</span>
+                            <p class="mt-1 text-amber-800">Barog sits at a perfect altitude for acclimatization. Use the break to check chain tension and brake pads — the descending sections ahead reward fresh brakes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 3 -->
+            <div class="route-step flex gap-6 mb-10">
+                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-violet-100 flex items-center justify-center z-10">
+                    <span class="font-mono text-violet-700 text-xl font-bold">03</span>
+                </div>
+                <div class="flex-1 journey-card bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div class="h-2 bg-gradient-to-r from-violet-600 to-violet-400"></div>
+                    <div class="p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-x-3">
+                                    <h3 class="text-3xl font-bold tracking-tight">The Deodar Trails</h3>
+                                </div>
+                                <p class="text-violet-700 font-semibold mt-1">Chail Bypass (avoiding Shimla traffic)</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-400">~95 km • 2h 45m</div>
+                                <div class="inline-block mt-1 text-[10px] px-3 py-px rounded-full bg-violet-100 text-violet-700 font-bold">SCENIC</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 prose prose-slate max-w-none text-[15px]">
+                            <p>Instead of fighting Shimla’s notorious traffic and construction, turn toward Chail. This is widely regarded as the most refreshing and beautiful segment of the entire route. You ride through the heart of the Chail Wildlife Sanctuary on narrow, single-lane roads with almost zero traffic.</p>
+                        </div>
+                        
+                        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-violet-700"><i class="fa-solid fa-tree"></i> <span>The Vibe</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Towering deodar cedars, dappled sunlight, cool mountain air, and the occasional langur troop watching from the canopy.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-violet-700"><i class="fa-solid fa-road"></i> <span>Trail Opportunity</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">The Chail–Kufri link road has soft shoulders perfect for short off-road excursions. The Xpulse feels planted and confidence-inspiring here.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-violet-700"><i class="fa-solid fa-temperature-low"></i> <span>Weather Note</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Expect 6–8°C cooler than the plains. A light riding jacket becomes essential even in June.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box mt-6 rounded-2xl p-5 text-sm">
+                            <span class="font-bold text-amber-700 flex items-center gap-x-2"><i class="fa-solid fa-lightbulb"></i> XPULSE TIP</span>
+                            <p class="mt-1 text-amber-800">Drop tire pressure another 2 PSI on this section. The deodar forest floor and occasional gravel patches reward the extra grip. Ride smoothly — the roads are narrow and you may meet local taxis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 4 -->
+            <div class="route-step flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center z-10">
+                    <span class="font-mono text-orange-700 text-xl font-bold">04</span>
+                </div>
+                <div class="flex-1 journey-card bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div class="h-2 bg-gradient-to-r from-orange-600 to-red-600"></div>
+                    <div class="p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-x-3">
+                                    <h3 class="text-3xl font-bold tracking-tight">The High Ridge Finale</h3>
+                                </div>
+                                <p class="text-orange-700 font-semibold mt-1">Kumarsain → Narkanda &amp; Hatu Peak</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-400">~86 km • 2h 15m</div>
+                                <div class="inline-block mt-1 text-[10px] px-3 py-px rounded-full bg-orange-100 text-orange-700 font-bold">EPIC</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 prose prose-slate max-w-none text-[15px]">
+                            <p>The final climb from Kumarsain to Narkanda (2,700m) is spectacular. Vast apple orchards line the road and the temperature continues to drop. At the summit of Hatu Peak you are rewarded with a true 360° Himalayan panorama — one of the finest viewpoints in the region.</p>
+                        </div>
+                        
+                        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-orange-700"><i class="fa-solid fa-mountain"></i> <span>The Summit</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Steep 6 km paved road from Narkanda town to Hatu Peak. The Xpulse’s torque makes light work of the gradient even with luggage.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-orange-700"><i class="fa-solid fa-binoculars"></i> <span>The Views</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Greater Himalayan range stretches before you. On clear June days you can see snow peaks in multiple directions.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-4">
+                                <div class="font-semibold flex items-center gap-x-2 text-orange-700"><i class="fa-solid fa-hiking"></i> <span>Off-Road Bonus</span></div>
+                                <p class="mt-1.5 text-slate-600 text-xs leading-snug">Beyond the paved summit, explore the ridge logging tracks and forest fire lines. Firm, safe, and the best off-road experience of the trip.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box mt-6 rounded-2xl p-5 text-sm">
+                            <span class="font-bold text-amber-700 flex items-center gap-x-2"><i class="fa-solid fa-lightbulb"></i> XPULSE TIP</span>
+                            <p class="mt-1 text-amber-800">At 2,700m the air is thinner — the Xpulse’s fuel injection handles it effortlessly. Explore the ridge tracks in 2nd/3rd gear. The bike’s ground clearance and suspension are more than capable here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY XPULSE 210 -->
+    <section id="xpulse" class="adventure-gradient text-white py-16">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="max-w-2xl mb-10">
+                <span class="uppercase text-orange-400 text-xs font-extrabold tracking-[2px]">THE PERFECT MACHINE</span>
+                <h2 class="text-5xl tracking-tighter font-bold">Why the Xpulse 210<br>is made for this ride</h2>
+                <p class="mt-4 text-lg text-white/70">Hero’s adventure-touring flagship brings together lightweight agility, serious torque, and genuine off-road capability at a price that makes Himalayan escapes accessible to more riders.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="feature-card bg-white/10 backdrop-blur border border-white/20 rounded-3xl p-7">
+                    <i class="fa-solid fa-weight-hanging text-4xl text-orange-400 mb-5"></i>
+                    <h4 class="font-bold text-xl mb-2">Lightweight &amp; Agile</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">At under 160 kg wet, the Xpulse feels nimble on narrow forest roads and tight hairpin bends. You won’t fight the bike — it becomes an extension of you.</p>
+                </div>
+                <div class="feature-card bg-white/10 backdrop-blur border border-white/20 rounded-3xl p-7">
+                    <i class="fa-solid fa-tachometer-alt text-4xl text-orange-400 mb-5"></i>
+                    <h4 class="font-bold text-xl mb-2">Torque-Rich Engine</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">The 210cc single delivers strong low-end pull perfect for climbing steep gradients and powering out of gravel sections without constant gear changes.</p>
+                </div>
+                <div class="feature-card bg-white/10 backdrop-blur border border-white/20 rounded-3xl p-7">
+                    <i class="fa-solid fa-shield-alt text-4xl text-orange-400 mb-5"></i>
+                    <h4 class="font-bold text-xl mb-2">Adventure DNA</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Long-travel suspension, 19-inch front wheel, and generous ground clearance make the optional gravel and ridge tracks at Tikkar Taal and Hatu Peak genuinely fun rather than stressful.</p>
+                </div>
+                <div class="feature-card bg-white/10 backdrop-blur border border-white/20 rounded-3xl p-7">
+                    <i class="fa-solid fa-gas-pump text-4xl text-orange-400 mb-5"></i>
+                    <h4 class="font-bold text-xl mb-2">Efficient Range</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Real-world 40–45 kmpl gives you comfortable range between the last reliable fuel stops at Panchkula/Solan and your arrival in Narkanda. No range anxiety on this route.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-xs text-white/50 max-w-md mx-auto">Pro tip: The Xpulse’s switchable traction control (on higher variants) and ride modes make it even more confidence-inspiring when you decide to explore those ridge-top fire tracks at Hatu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RIDER'S MANUAL -->
+    <section id="manual" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <span class="text-orange-700 text-xs font-extrabold tracking-[2px]">ESSENTIAL KNOWLEDGE</span>
+                    <h2 class="section-header text-5xl tracking-tighter font-bold">Rider’s Manual</h2>
+                </div>
+                <div class="hidden md:block text-right text-sm text-slate-500 max-w-[220px]">June-specific advice for the Xpulse 210 on this exact route</div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-5">
+                <!-- Tip cards -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex gap-4">
+                        <div class="text-4xl text-orange-600"><i class="fa-solid fa-tachometer-alt"></i></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">Tire Pressure Strategy</h4>
+                            <p class="mt-3 text-sm text-slate-600">Start highway sections at 28–30 PSI front / 32 PSI rear. Once you hit Chail forest roads and the Hatu ridge tracks, drop front to 24–26 PSI and rear to 28 PSI. The extra footprint transforms how planted the Xpulse feels on loose surfaces.</p>
+                            <div class="mt-4 text-xs bg-amber-50 text-amber-700 px-3 py-1.5 rounded-2xl inline-block font-medium">Re-inflate before returning to tarmac</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex gap-4">
+                        <div class="text-4xl text-orange-600"><i class="fa-solid fa-gas-pump"></i></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">Fuel &amp; Range Planning</h4>
+                            <p class="mt-3 text-sm text-slate-600">Panchkula and Solan/Barog are your last reliable fuel stops. Fill up in Barog. The Xpulse’s ~12–13L tank gives you a comfortable 450+ km theoretical range, but real-world mixed riding + altitude = plan for ~380 km safe range.</p>
+                            <div class="mt-4 text-xs bg-red-50 text-red-700 px-3 py-1.5 rounded-2xl inline-block font-medium">Carry 1–2L in a jerry can if exploring deep ridge tracks</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex gap-4">
+                        <div class="text-4xl text-orange-600"><i class="fa-solid fa-cloud-sun"></i></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">June Weather Nuances</h4>
+                            <p class="mt-3 text-sm text-slate-600">Plains can be 38–42°C. By Morni you’re already in the low 20s. At Narkanda expect daytime highs of 18–22°C and nighttime lows of 10–12°C. Strong ridge winds at Hatu can make it feel colder. Pack a lightweight windproof layer.</p>
+                            <div class="mt-4 text-xs bg-sky-50 text-sky-700 px-3 py-1.5 rounded-2xl inline-block font-medium">Mornings are crisp — perfect riding weather</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex gap-4">
+                        <div class="text-4xl text-orange-600"><i class="fa-solid fa-tools"></i></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">Bike Prep &amp; Maintenance</h4>
+                            <p class="mt-3 text-sm text-slate-600">Before departure: fresh oil, clean air filter, chain tension &amp; lube, brake pads inspected. After gravel sections at Tikkar Taal and Hatu, clean the chain and re-lube. Carry a basic toolkit, puncture repair kit, and zip ties.</p>
+                            <div class="mt-4 text-xs bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-2xl inline-block font-medium">Xpulse tubeless tires — carry plug kit + compressor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-orange-700 text-white rounded-3xl p-8 text-sm">
+                <div class="flex flex-col md:flex-row gap-y-6 items-start md:items-center justify-between">
+                    <div class="max-w-md">
+                        <span class="font-bold">Pro move:</span> Download offline maps (Google Maps or OsmAnd) for the entire route. Cell coverage drops in the deeper forest sections between Chail and Narkanda.
+                    </div>
+                    <button onclick="copyOfflineMapTip()" class="flex-shrink-0 px-5 py-2.5 text-sm font-semibold bg-white/90 hover:bg-white text-orange-800 rounded-3xl flex items-center gap-x-2 active:scale-[0.985]">
+                        <i class="fa-solid fa-copy"></i>
+                        <span>Copy tip to clipboard</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="bg-slate-900 py-16 text-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-orange-400 text-xs font-extrabold tracking-[2px]">VISUAL INSPIRATION</span>
+                    <h2 class="text-5xl tracking-tighter font-bold">Moments from the ride</h2>
+                </div>
+                <button onclick="showAllGallery()" class="hidden md:flex items-center text-sm font-medium text-orange-400 hover:text-orange-300">
+                    VIEW ALL PHOTOS <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                <!-- Gallery images using picsum with relevant seeds -->
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/1005/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Hero Xpulse 210 on Himalayan ridge at golden hour">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">HATU PEAK • GOLDEN HOUR</div>
+                    </div>
+                </div>
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/1016/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Winding forest road through dense pine trees">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">CHAIL DEODAR FOREST</div>
+                    </div>
+                </div>
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/1033/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Motorcycle on scenic mountain road with valley views">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">MORNI HILLS • VIEWPOINT</div>
+                    </div>
+                </div>
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/160/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Panoramic Himalayan mountain range from high viewpoint">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">HATU SUMMIT • 360° VIEW</div>
+                    </div>
+                </div>
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/251/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Adventure motorcycle on gravel forest trail">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">TIKKAR TAAL • GRAVEL TRAIL</div>
+                    </div>
+                </div>
+                <div onclick="showImageModal(this)" class="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="https://picsum.photos/id/201/600/450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Rider looking at snow capped peaks from mountain pass">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <div class="text-xs font-bold">NARKANDA RIDGE • APPLE ORCHARDS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAN YOUR TRIP -->
+    <section id="plan" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-10">
+                <span class="text-orange-700 text-xs font-extrabold tracking-[2px]">EVERYTHING YOU NEED</span>
+                <h2 class="section-header text-5xl tracking-tighter font-bold">Plan Your Escape</h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-12 gap-8">
+                <!-- Left column: Practical info -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                        <h3 class="font-bold text-2xl mb-5 flex items-center gap-x-3"><i class="fa-solid fa-calendar-alt text-orange-600"></i> Best Time &amp; Conditions</h3>
+                        <div class="prose prose-slate text-sm max-w-none">
+                            <p><strong>June is excellent</strong> — long days, generally clear skies, and the landscape is lush green before the heavy monsoon arrives in July. Early June tends to be drier; by mid-to-late June you may encounter occasional pre-monsoon showers in the afternoons.</p>
+                            <p class="mt-3"><strong>Road conditions:</strong> Mostly excellent tarmac with some broken patches and gravel shoulders in the forest sections. The Xpulse handles everything confidently. Landslide risk is low in June but always check local updates the night before.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                        <h3 class="font-bold text-2xl mb-5 flex items-center gap-x-3"><i class="fa-solid fa-wallet text-orange-600"></i> Rough Cost Estimate (Solo Rider)</h3>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-3xl font-bold tracking-tighter">₹1,800</div>
+                                <div class="text-xs text-slate-500 mt-1">Fuel (≈40 kmpl)</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold tracking-tighter">₹3,500</div>
+                                <div class="text-xs text-slate-500 mt-1">Stay + Meals (2D/1N)</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold tracking-tighter">₹1,200</div>
+                                <div class="text-xs text-slate-500 mt-1">Misc (tolls, snacks, entry)</div>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-6">Total ≈ ₹6,500 for a comfortable solo trip. Double for two-up with better hotels.</p>
+                    </div>
+                </div>
+                
+                <!-- Right: Quick actions + checklist -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900 text-white rounded-3xl p-8 h-full">
+                        <h3 class="font-bold text-xl mb-6">Quick Checklist</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Download offline maps + GPX of this route</span></li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Check tire pressure &amp; chain the night before</span></li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Pack light windproof jacket + arm warmers</span></li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Fill up in Barog — last reliable fuel</span></li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Tell a friend your exact itinerary &amp; expected arrival</span></li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Carry cash for small mountain vendors</span></li>
+                        </ul>
+                        
+                        <div class="mt-8 pt-6 border-t border-white/20">
+                            <button onclick="showCostCalculator()" class="w-full flex items-center justify-center gap-x-2 bg-white text-slate-900 font-semibold py-3.5 rounded-3xl hover:bg-amber-100 active:scale-[0.985] transition-all">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Open Trip Cost Calculator</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="max-w-screen-2xl mx-auto px-8 pb-16">
+        <div class="bg-gradient-to-br from-orange-700 via-orange-800 to-red-900 rounded-3xl px-10 py-14 text-center text-white">
+            <h2 class="text-4xl font-bold tracking-tight mb-3">Ready to ride into the Himalayas?</h2>
+            <p class="max-w-md mx-auto text-white/80 mb-8">This route was designed for riders who value scenery, serenity, and the pure pleasure of the ride over speed. The Xpulse 210 is the perfect companion.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.location.reload()" class="px-10 py-4 font-semibold bg-white text-orange-800 rounded-3xl hover:bg-amber-50 active:scale-[0.985] transition-all flex items-center justify-center gap-x-2">
+                    <i class="fa-solid fa-redo"></i>
+                    <span>Save this page for offline reference</span>
+                </button>
+                <button onclick="shareRoute()" class="px-10 py-4 font-semibold border border-white/60 hover:bg-white/10 rounded-3xl flex items-center justify-center gap-x-2 transition-all">
+                    <i class="fa-solid fa-share-alt"></i>
+                    <span>Share with fellow riders</span>
+                </button>
+            </div>
+            <p class="text-xs text-white/50 mt-8">Ride safe. Respect the mountains. Leave no trace.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <p>Designed with passion for the Hero Xpulse 210 community • Not officially affiliated with Hero MotoCorp</p>
+            <p class="mt-1">Ride responsibly. Always wear full gear. Conditions can change — check local weather and road updates before departure.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" onclick="hideImageModal()" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="max-w-5xl w-full relative">
+            <button onclick="hideImageModal()" class="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-xl">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+            <img id="modal-image" class="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl" alt="">
+            <div id="modal-caption" class="text-center text-white mt-4 text-sm font-medium tracking-wider"></div>
+        </div>
+    </div>
+
+    <!-- Cost Calculator Modal -->
+    <div id="cost-modal" onclick="hideCostModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full p-8">
+            <h3 class="font-bold text-2xl mb-1">Trip Cost Calculator</h3>
+            <p class="text-sm text-slate-500 mb-6">Estimate your total spend for the Himalayan Escape</p>
+            
+            <div class="space-y-5">
+                <div>
+                    <label class="text-xs font-semibold text-slate-500">Number of riders</label>
+                    <input id="riders" type="number" value="1" class="w-full border border-slate-300 rounded-2xl px-4 py-3 text-lg font-medium">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-500">Average mileage (kmpl)</label>
+                    <input id="mileage" type="number" value="42" class="w-full border border-slate-300 rounded-2xl px-4 py-3 text-lg font-medium">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-500">Fuel price (₹ per litre)</label>
+                    <input id="fuel-price" type="number" value="98" class="w-full border border-slate-300 rounded-2xl px-4 py-3 text-lg font-medium">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-500">Nights / Accommodation budget (₹)</label>
+                    <input id="stay" type="number" value="3500" class="w-full border border-slate-300 rounded-2xl px-4 py-3 text-lg font-medium">
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t">
+                <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm text-slate-500">Estimated Total</span>
+                    <span id="total-cost" class="text-4xl font-bold tracking-tighter text-orange-700">₹0</span>
+                </div>
+                <button onclick="calculateCost()" class="mt-4 w-full bg-orange-700 hover:bg-orange-800 text-white py-3.5 rounded-3xl font-semibold">Calculate</button>
+            </div>
+            
+            <button onclick="hideCostModal()" class="mt-3 w-full text-sm text-slate-400 hover:text-slate-600 py-2">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script configuration
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-red', '#c2410c');
+        }
+        
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    btn.querySelector('i').classList.remove('fa-times');
+                    btn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
+        
+        // Navbar scroll effect
+        function setupNavbar() {
+            const navbar = document.getElementById('navbar');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+            
+            // Active nav link highlighting
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = ['overview', 'journey', 'xpulse', 'manual', 'gallery', 'plan'];
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        const sectionTop = section.getBoundingClientRect().top;
+                        if (sectionTop <= 180) {
+                            current = sectionId;
+                        }
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('nav-active');
+                    }
+                });
+            });
+        }
+        
+        // Smooth scroll for all anchor links
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Image modal
+        let currentModalImage = null;
+        
+        function showImageModal(element) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            const caption = document.getElementById('modal-caption');
+            
+            const img = element.querySelector('img');
+            modalImg.src = img.src;
+            caption.textContent = img.alt || element.querySelector('.text-xs')?.textContent || '';
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            currentModalImage = element;
+        }
+        
+        function hideImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function showAllGallery() {
+            const gallerySection = document.getElementById('gallery');
+            gallerySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Briefly highlight all gallery images
+            setTimeout(() => {
+                document.querySelectorAll('#gallery .group').forEach((el, i) => {
+                    setTimeout(() => {
+                        el.style.boxShadow = '0 0 0 3px rgb(249 115 22 / 0.5)';
+                        setTimeout(() => {
+                            el.style.boxShadow = '';
+                        }, 1200);
+                    }, i * 80);
+                });
+            }, 800);
+        }
+        
+        // Share route function
+        function shareRoute() {
+            const text = "Check out this beautiful Himalayan Escape route for the Hero Xpulse 210: Kurukshetra to Narkanda via Morni, Barog, Chail & Hatu Peak — 331 km of pure scenery!";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Himalayan Escape • Xpulse 210',
+                    text: text,
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text + "\n\n" + window.location.href).then(() => {
+                    const originalText = event.currentTarget ? event.currentTarget.innerHTML : '';
+                    const btns = document.querySelectorAll('button');
+                    btns.forEach(b => {
+                        if (b.innerText.includes('Share')) {
+                            const orig = b.innerHTML;
+                            b.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Copied to clipboard!';
+                            setTimeout(() => { b.innerHTML = orig; }, 2200);
+                        }
+                    });
+                }).catch(() => {
+                    alert('Link copied: ' + window.location.href);
+                });
+            }
+        }
+        
+        // Copy offline map tip
+        function copyOfflineMapTip() {
+            const tip = "Pro tip: Download offline maps (Google Maps or OsmAnd) for the entire route. Cell coverage drops in the deeper forest sections between Chail and Narkanda.";
+            navigator.clipboard.writeText(tip).then(() => {
+                const btns = document.querySelectorAll('button');
+                btns.forEach(b => {
+                    if (b.innerText.includes('Copy tip')) {
+                        const orig = b.innerHTML;
+                        b.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                        setTimeout(() => { b.innerHTML = orig; }, 2000);
+                    }
+                });
+            });
+        }
+        
+        // Cost calculator
+        function showCostCalculator() {
+            document.getElementById('cost-modal').classList.remove('hidden');
+            document.getElementById('cost-modal').classList.add('flex');
+            // Auto calculate on open with defaults
+            setTimeout(calculateCost, 50);
+        }
+        
+        function hideCostModal() {
+            const modal = document.getElementById('cost-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function calculateCost() {
+            const riders = parseFloat(document.getElementById('riders').value) || 1;
+            const mileage = parseFloat(document.getElementById('mileage').value) || 42;
+            const fuelPrice = parseFloat(document.getElementById('fuel-price').value) || 98;
+            const stayBudget = parseFloat(document.getElementById('stay').value) || 3500;
+            
+            const distance = 331;
+            const fuelUsed = distance / mileage;
+            const fuelCost = fuelUsed * fuelPrice;
+            
+            // Rough other costs per person
+            const foodPerPerson = 1200;
+            const miscPerPerson = 600;
+            
+            const total = (fuelCost + stayBudget + (foodPerPerson * riders) + (miscPerPerson * riders));
+            
+            document.getElementById('total-cost').innerHTML = '₹' + Math.round(total).toLocaleString('en-IN');
+        }
+        
+        // Keyboard support for modals
+        function setupKeyboardControls() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const imageModal = document.getElementById('image-modal');
+                    const costModal = document.getElementById('cost-modal');
+                    
+                    if (!imageModal.classList.contains('hidden')) {
+                        imageModal.classList.remove('flex');
+                        imageModal.classList.add('hidden');
+                    } else if (!costModal.classList.contains('hidden')) {
+                        costModal.classList.remove('flex');
+                        costModal.classList.add('hidden');
+                    }
+                }
+                
+                if (e.key === "/" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault();
+                    const journey = document.getElementById('journey');
+                    journey.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            // Easter egg: Press "?" to show cost calculator
+            document.addEventListener('keypress', function(e) {
+                if (e.key === "?") {
+                    const costModal = document.getElementById('cost-modal');
+                    if (costModal.classList.contains('hidden')) {
+                        showCostCalculator();
+                    }
+                }
+            });
+        }
+        
+        // Initialize everything
+        function initializeApp() {
+            initializeTailwind();
+            setupMobileMenu();
+            setupNavbar();
+            setupSmoothScroll();
+            setupKeyboardControls();
+            
+            // Optional: Preload a couple of gallery images for smoother experience
+            const preloadImages = [
+                'https://picsum.photos/id/1005/600/450',
+                'https://picsum.photos/id/1016/600/450'
+            ];
+            preloadImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+            
+            // Show a subtle welcome toast on first visit (demo only)
+            if (!sessionStorage.getItem('welcomed')) {
+                setTimeout(() => {
+                    const toast = document.createElement('div');
+                    toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-5 py-2.5 rounded-3xl shadow-xl flex items-center gap-x-2 z-50';
+                    toast.innerHTML = `<span>Pro tip: Press <span class="font-mono bg-white/20 px-1.5 py-px rounded">?</span> to open the cost calculator anytime.</span>`;
+                    document.body.appendChild(toast);
+                    
+                    setTimeout(() => {
+                        toast.style.transition = 'all 0.4s ease';
+                        toast.style.opacity = '0';
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5200);
+                }, 8500);
+                sessionStorage.setItem('welcomed', 'true');
+            }
+            
+            // Make sure all interactive elements have proper cursor
+            console.log('%c[Himalayan Escape] Dressed-up page initialized successfully. All interactive features ready.', 'color:#64748b');
+        }
+        
+        // Boot the application
+        window.onload = initializeApp;
+    </script>
+</body>
+</html>
