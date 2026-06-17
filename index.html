@@ -1,1 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himalayan Escape — The XPulse 210 Climb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13211f;        /* high cold air — near-black spruce */
+    --paper:#e9e5d8;      /* topo-map paper */
+    --card:#f6f3ea;       /* raised paper */
+    --spruce:#2c5a52;     /* mid teal-green */
+    --alpine:#4a7c8c;     /* cool altitude blue */
+    --ember:#cf4f2c;      /* the warm accent — plains heat & the bike */
+    --summit:#c79a3e;     /* gold, reserved for the peak */
+    --hair:#cdc6b4;       /* hairlines on paper */
+    --muted:#6c6a5c;
+
+    --tri-blue:#2657a3;   /* XPulse 210 tricolor */
+    --tri-red:#cf4f2c;
+
+    --display:"Bricolage Grotesque",sans-serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- DATA / MONO TYPE ---------- */
+  .mono{font-family:var(--mono);letter-spacing:-.02em;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ember);
+  }
+
+  /* ---------- HERO ---------- */
+  header{
+    position:relative;
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,4.5rem);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .contour{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    opacity:.18;
+    pointer-events:none;
+  }
+  .contour path{fill:none;stroke:#7fa8a0;stroke-width:1;}
+  header .wrap{position:relative;z-index:2;}
+
+  .hero-eyebrow{color:var(--summit);}
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2.7rem,9vw,5.2rem);
+    line-height:.95;
+    margin:.5rem 0 0;
+    letter-spacing:-.02em;
+  }
+  h1 .light{font-weight:400;color:#9fb8b2;display:block;font-size:.42em;letter-spacing:.01em;margin-top:.7rem;}
+  .lede{
+    max-width:48ch;
+    color:#c2cdc9;
+    font-size:1.05rem;
+    margin:1.4rem 0 2.4rem;
+  }
+
+  /* route line in hero */
+  .route{margin-top:.5rem;}
+  .route svg{width:100%;max-width:620px;height:64px;display:block;overflow:visible;}
+  .route .track{fill:none;stroke:rgba(255,255,255,.22);stroke-width:2;}
+  .route .draw{
+    fill:none;stroke:var(--ember);stroke-width:2.5;stroke-linecap:round;
+    stroke-dasharray:640;stroke-dashoffset:640;
+    animation:draw 2.4s cubic-bezier(.4,0,.1,1) .4s forwards;
+  }
+  .route .node{fill:var(--paper);}
+  .route .node.start{animation:pop .5s ease .5s both;}
+  .route .node.end{fill:var(--summit);animation:pop .5s ease 2.6s both;}
+  .route .lbl{font-family:var(--mono);font-size:11px;fill:#c2cdc9;letter-spacing:.04em;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes pop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+  /* ---------- AT A GLANCE ---------- */
+  .glance{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--hair);
+    border:1px solid var(--hair);
+    margin:-2.4rem auto 0;
+    position:relative;z-index:5;
+    max-width:880px;
+    box-shadow:0 24px 50px -28px rgba(19,33,31,.45);
+  }
+  .glance .cell{background:var(--card);padding:1.5rem 1.4rem;}
+  .glance .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .glance .v{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,4vw,2.1rem);margin-top:.35rem;line-height:1;}
+  .glance .v small{font-size:.5em;font-weight:400;color:var(--muted);font-family:var(--body);}
+
+  /* ---------- CLIMB SECTION ---------- */
+  section.climb{padding:clamp(3.5rem,7vw,5.5rem) 0 2rem;}
+  .section-head{margin-bottom:2.5rem;}
+  .section-head h2{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(1.8rem,5vw,2.6rem);margin:.4rem 0 0;letter-spacing:-.01em;
+  }
+  .section-head p{color:var(--muted);max-width:54ch;margin:.6rem 0 0;}
+
+  /* the elevation track */
+  .track-rail{position:relative;padding-left:64px;}
+  .track-rail::before{
+    content:"";position:absolute;left:23px;top:8px;bottom:40px;width:3px;
+    background:linear-gradient(180deg,var(--ember) 0%,var(--spruce) 38%,var(--alpine) 72%,var(--summit) 100%);
+    border-radius:3px;
+  }
+
+  .stop{position:relative;margin-bottom:1.4rem;}
+  .stop .node{
+    position:absolute;left:-52px;top:6px;
+    width:20px;height:20px;border-radius:50%;
+    background:var(--card);border:3px solid var(--spruce);
+    box-shadow:0 0 0 5px var(--paper);
+  }
+  .stop:nth-child(1) .node{border-color:var(--ember);}
+  .stop:nth-child(2) .node{border-color:var(--spruce);}
+  .stop:nth-child(3) .node{border-color:var(--alpine);}
+  .stop:nth-child(4) .node{border-color:var(--summit);width:24px;height:24px;left:-54px;background:var(--summit);}
+
+  .stop .alt{
+    position:absolute;left:-52px;top:34px;width:46px;text-align:center;
+    font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:-.02em;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--hair);
+    border-radius:3px;
+    padding:1.6rem 1.7rem;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(19,33,31,.4);border-color:var(--spruce);}
+
+  .card .num{font-family:var(--mono);font-size:.72rem;color:var(--ember);letter-spacing:.12em;}
+  .card h3{font-family:var(--display);font-weight:600;font-size:1.4rem;margin:.3rem 0 .1rem;}
+  .card .leg{font-family:var(--mono);font-size:.78rem;color:var(--spruce);letter-spacing:-.01em;margin-bottom:.9rem;}
+  .card p{margin:.2rem 0 1rem;color:#36413c;}
+
+  .pin{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--paper);border:1px solid var(--hair);
+    border-radius:2px;padding:.5rem .8rem;font-size:.82rem;
+    margin:.2rem 0 1rem;font-family:var(--mono);letter-spacing:-.01em;
+  }
+  .pin.svc{border-color:var(--spruce);color:var(--spruce);}
+  .pin .star{color:var(--summit);font-weight:700;}
+
+  .notes{list-style:none;padding:0;margin:0;display:grid;gap:.55rem;}
+  .notes li{position:relative;padding-left:1.3rem;font-size:.95rem;}
+  .notes li::before{content:"›";position:absolute;left:0;color:var(--spruce);font-weight:700;}
+  .notes li.tip::before{content:"◆";color:var(--ember);font-size:.7rem;top:.18rem;}
+  .notes li.tip{color:var(--ink);}
+  .notes li.tip b{color:var(--ember);}
+
+  /* ---------- MANUAL ---------- */
+  .manual{
+    background:var(--ink);color:var(--paper);
+    border-radius:4px;
+    padding:clamp(2rem,5vw,3rem);
+    margin:2.5rem 0 4rem;
+    position:relative;overflow:hidden;
+  }
+  .manual .tribar{position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--tri-blue) 0 33.3%,#f6f3ea 33.3% 66.6%,var(--tri-red) 66.6% 100%);}
+  .manual h2{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4vw,2rem);margin:.4rem 0 .3rem;}
+  .manual .sub{color:#9fb8b2;font-size:.92rem;margin:0 0 1.8rem;}
+  .manual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);}
+  .mcell{background:var(--ink);padding:1.4rem;}
+  .mcell .mk{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--summit);display:block;margin-bottom:.6rem;}
+  .mcell p{margin:0;color:#d3ded9;font-size:.92rem;}
+
+  footer{text-align:center;padding:0 0 4rem;color:var(--muted);font-size:.85rem;}
+  footer .sig{font-family:var(--mono);letter-spacing:-.01em;}
+  footer .sig b{color:var(--ember);}
+
+  /* ---------- PLANNER ---------- */
+  .planner{padding:1rem 0 1rem;}
+  .planner-shell{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:1px;
+    background:var(--hair);border:1px solid var(--hair);border-radius:4px;overflow:hidden;
+    box-shadow:0 24px 50px -34px rgba(19,33,31,.4);
+  }
+  .planner-inputs{background:var(--card);padding:1.8rem 1.7rem;}
+  .planner-inputs .field{margin-bottom:1.15rem;}
+  .planner-inputs label{
+    display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;
+  }
+  .planner-inputs input[type=number]{
+    width:100%;font-family:var(--mono);font-size:1rem;color:var(--ink);
+    background:var(--paper);border:1px solid var(--hair);border-radius:3px;
+    padding:.6rem .7rem;transition:border-color .2s ease;
+  }
+  .planner-inputs input:focus{outline:none;border-color:var(--spruce);}
+  .planner-inputs .inline{display:flex;gap:.9rem;}
+  .planner-inputs .inline .field{flex:1;}
+
+  .toggle{display:inline-flex;border:1px solid var(--hair);border-radius:3px;overflow:hidden;}
+  .toggle button{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    border:none;background:var(--paper);color:var(--muted);
+    padding:.55rem .9rem;cursor:pointer;transition:background .2s,color .2s;
+  }
+  .toggle button[aria-pressed="true"]{background:var(--spruce);color:var(--card);}
+
+  .planner-out{background:var(--ink);color:var(--paper);padding:1.8rem 1.7rem;display:flex;flex-direction:column;}
+  .planner-out .out-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--summit);}
+  .planner-out .total{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7vw,3.4rem);line-height:1;margin:.3rem 0 .1rem;}
+  .planner-out .per{font-family:var(--mono);font-size:.78rem;color:#9fb8b2;margin-bottom:1.4rem;}
+  .breakdown{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.12);}
+  .breakdown li{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:.84rem;padding:.62rem 0;
+    border-bottom:1px solid rgba(255,255,255,.08);color:#d3ded9;
+  }
+  .breakdown li .bk{color:#9fb8b2;letter-spacing:.02em;}
+  .breakdown li.fuel .amt{color:var(--ember);}
+  .planner-note{font-family:var(--mono);font-size:.66rem;color:var(--muted);margin-top:1.1rem;letter-spacing:-.01em;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:680px){
+    .glance{grid-template-columns:1fr;max-width:100%;}
+    .manual-grid{grid-template-columns:1fr;}
+    .planner-shell{grid-template-columns:1fr;}
+    .track-rail{padding-left:52px;}
+    .track-rail::before{left:17px;}
+    .stop .node{left:-44px;}
+    .stop:nth-child(4) .node{left:-46px;}
+    .stop .alt{left:-46px;width:42px;}
+  }
+
+  /* keyboard focus */
+  a:focus-visible,.card:focus-visible{outline:2px solid var(--ember);outline-offset:3px;}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+    .route .draw{stroke-dashoffset:0;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- contour-line topography -->
+  <svg class="contour" viewBox="0 0 1040 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-50,400 Q200,330 380,380 T780,350 T1100,400"/>
+    <path d="M-50,360 Q220,290 400,340 T800,300 T1100,360"/>
+    <path d="M-50,320 Q240,250 420,300 T820,255 T1100,320"/>
+    <path d="M-50,280 Q260,215 440,260 T840,215 T1100,280"/>
+    <path d="M-50,240 Q280,180 460,220 T860,180 T1100,245"/>
+    <path d="M-50,200 Q300,150 480,185 T880,150 T1100,210"/>
+    <path d="M-50,160 Q320,120 500,150 T900,120 T1100,175"/>
+  </svg>
+
+  <div class="wrap">
+    <span class="eyebrow hero-eyebrow">Inner Space Series · Ride Log</span>
+    <h1>Himalayan&nbsp;Escape
+      <span class="light">A 331 km climb from the Kurukshetra plains to the Narkanda ridge — on the XPulse 210.</span>
+    </h1>
+    <p class="lede">Skip the heat-soaked highways. This line trades speed for shade — Shivalik foothills, deodar forest lanes, and a ridge-top finish at 2,700 metres.</p>
+
+    <div class="route" aria-label="Route from Kurukshetra to Narkanda">
+      <svg viewBox="0 0 620 64" role="img" aria-label="Climbing route profile">
+        <path class="track" d="M10,52 C160,52 200,20 320,20 S480,12 610,8"/>
+        <path class="draw" d="M10,52 C160,52 200,20 320,20 S480,12 610,8"/>
+        <circle class="node start" cx="10" cy="52" r="6"/>
+        <circle class="node end" cx="610" cy="8" r="7"/>
+        <text class="lbl" x="2" y="46" dy="-14">KURUKSHETRA · 255m</text>
+        <text class="lbl" x="610" y="8" dy="-12" text-anchor="end">NARKANDA · 2700m</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- AT A GLANCE -->
+  <div class="glance">
+    <div class="cell">
+      <div class="k">Distance</div>
+      <div class="v">331 <small>km</small></div>
+    </div>
+    <div class="cell">
+      <div class="k">Saddle Time</div>
+      <div class="v">9:15 <small>hrs</small></div>
+    </div>
+    <div class="cell">
+      <div class="k">Elevation Gain</div>
+      <div class="v">~2.4 <small>km up</small></div>
+    </div>
+  </div>
+
+  <!-- THE CLIMB -->
+  <section class="climb">
+    <div class="section-head">
+      <span class="eyebrow">Four stages, one ascent</span>
+      <h2>The Climb</h2>
+      <p>Each stop sits higher than the last. The rail tracks your altitude — warm at the plains, cool at the ridge.</p>
+    </div>
+
+    <div class="track-rail">
+
+      <!-- STOP 1 -->
+      <div class="stop">
+        <span class="node"></span><span class="alt mono">1220m</span>
+        <article class="card" tabindex="0">
+          <span class="num">STAGE 01</span>
+          <h3>The Foothill Prelude</h3>
+          <div class="leg">Kurukshetra → Morni</div>
+          <p>Leave the plains behind and slip into the Shivaliks via Panchkula — it shakes off the highway traffic almost at once. Lush green ridges, sharp engaging corners.</p>
+          <div class="pin">📍 Morni · Haryana 134205</div>
+          <ul class="notes">
+            <li class="tip"><b>XPulse line:</b> the Tikkar Taal trail offers gentle gravel — a clean shake-down for your gear before the high peaks.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- STOP 2 -->
+      <div class="stop">
+        <span class="node"></span><span class="alt mono">1530m</span>
+        <article class="card" tabindex="0">
+          <span class="num">STAGE 02</span>
+          <h3>Into the Pines</h3>
+          <div class="leg">Morni → Barog</div>
+          <p>Rejoin the hill highway briefly at Kumarhatti to reach Barog — your designated stillness spot. Thirty minutes of pine-scented air for a mental reset.</p>
+          <div class="pin svc">🛠 PREMIA SOLAN · Runway Moto Dreamz <span class="star">★ 4.8</span></div>
+          <ul class="notes">
+            <li>Last easy service before the interior. Opens 10 AM, Barog.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- STOP 3 -->
+      <div class="stop">
+        <span class="node"></span><span class="alt mono">2150m</span>
+        <article class="card" tabindex="0">
+          <span class="num">STAGE 03</span>
+          <h3>The Deodar Trails</h3>
+          <div class="leg">Chail bypass → Kufri</div>
+          <p>Turn for Chail instead of fighting Shimla's traffic. The most refreshing leg of the whole ride — dense deodar, single-lane roads, a real drop in temperature.</p>
+          <ul class="notes">
+            <li class="tip"><b>Soft-road:</b> the Chail–Kufri lane is narrow and scenic, with plenty of forgiving shoulders to explore.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- STOP 4 -->
+      <div class="stop">
+        <span class="node"></span><span class="alt mono">2700m</span>
+        <article class="card" tabindex="0">
+          <span class="num">STAGE 04 · SUMMIT</span>
+          <h3>The High Ridge Finale</h3>
+          <div class="leg">Kumarsain → Narkanda → Hatu Peak</div>
+          <p>The climb from Kumarsain opens into apple orchards and ridge-top air. Ride the steep 6 km from Narkanda to Hatu Peak for a 360° sweep of the Greater Himalayas.</p>
+          <div class="pin">⛰ Hatu Peak · 3400m <span class="star">★ 4.8</span></div>
+          <ul class="notes">
+            <li class="tip"><b>XPulse line:</b> past the paved climb, the logging and firebreak tracks stay firm on the ridge — the best off-road of the trip.</li>
+          </ul>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLAN THE CLIMB -->
+  <section class="planner">
+    <div class="section-head">
+      <span class="eyebrow">Run the numbers</span>
+      <h2>Plan the Climb</h2>
+      <p>A working estimate for the run. Adjust anything — the total updates live.</p>
+    </div>
+
+    <div class="planner-shell">
+      <div class="planner-inputs">
+        <div class="field">
+          <label>Trip distance</label>
+          <div class="toggle" role="group" aria-label="Trip distance">
+            <button type="button" id="t-oneway" aria-pressed="false">One way · 331 km</button>
+            <button type="button" id="t-return" aria-pressed="true">Return · 662 km</button>
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="p-riders">Riders</label>
+            <input type="number" id="p-riders" min="1" max="6" step="1" value="1">
+          </div>
+          <div class="field">
+            <label for="p-nights">Nights</label>
+            <input type="number" id="p-nights" min="0" max="14" step="1" value="1">
+          </div>
+        </div>
+        <div class="inline">
+          <div class="field">
+            <label for="p-mileage">Mileage · km/L</label>
+            <input type="number" id="p-mileage" min="15" max="60" step="1" value="38">
+          </div>
+          <div class="field">
+            <label for="p-fuel">Petrol · ₹/L</label>
+            <input type="number" id="p-fuel" min="50" max="150" step="0.5" value="96">
+          </div>
+        </div>
+        <div class="field">
+          <label for="p-stay">Stay · ₹ per night</label>
+          <input type="number" id="p-stay" min="0" step="100" value="2500">
+        </div>
+      </div>
+
+      <div class="planner-out">
+        <span class="out-k">Estimated total</span>
+        <div class="total" id="p-total">₹0</div>
+        <div class="per" id="p-per">— per rider</div>
+        <ul class="breakdown">
+          <li class="fuel"><span class="bk" id="bk-fuel-l">Fuel · 0 L</span><span class="amt" id="bk-fuel">₹0</span></li>
+          <li><span class="bk">Stay</span><span class="amt" id="bk-stay">₹0</span></li>
+          <li><span class="bk">Food</span><span class="amt" id="bk-food">₹0</span></li>
+          <li><span class="bk">Buffer · 10%</span><span class="amt" id="bk-buf">₹0</span></li>
+        </ul>
+        <p class="planner-note">Food ₹1,000/rider/day · 10% buffer for tolls &amp; the unplanned chai. Estimate only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIDER'S MANUAL -->
+  <section class="manual">
+    <div class="tribar" aria-hidden="true"></div>
+    <span class="eyebrow" style="color:var(--summit)">Before you ride</span>
+    <h2>Rider's Manual — XPulse 210</h2>
+    <p class="sub">Three things the mountain will ask of you.</p>
+    <div class="manual-grid">
+      <div class="mcell">
+        <span class="mk">Tyres</span>
+        <p>Drop pressure a touch once you hit the Chail forest roads — more rubber on the gravel, better grip.</p>
+      </div>
+      <div class="mcell">
+        <span class="mk">Fuel</span>
+        <p>Panchkula and Solan are your last guaranteed pumps before the interior mountain segments. Top up.</p>
+      </div>
+      <div class="mcell">
+        <span class="mk">June layers</span>
+        <p>Plains may burn, but the ridge won't. Highs near 25°C; Narkanda can fall to a chilly 12°C after dark.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="sig">Ride safe · respect the mountains · leave no trace — <b>the tricolor</b> goes home clean.</p>
+</footer>
+
+<script>
+(function(){
+  var ONE_WAY = 331, DAYS_NIGHTS_FLOOR = 1;
+  var roundTrip = true;
+  var $ = function(id){ return document.getElementById(id); };
+  var inr = function(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); };
+
+  function num(id, fallback){
+    var v = parseFloat($(id).value);
+    return (isNaN(v) || v < 0) ? fallback : v;
+  }
+
+  function calc(){
+    var distance = roundTrip ? ONE_WAY * 2 : ONE_WAY;
+    var riders  = Math.max(1, num('p-riders', 1));
+    var nights  = num('p-nights', 1);
+    var mileage = Math.max(1, num('p-mileage', 38));
+    var fuelPx  = num('p-fuel', 96);
+    var stayPn  = num('p-stay', 2500);
+
+    var litres   = distance / mileage;
+    var fuelCost = litres * fuelPx;                 // shared across the bike(s)
+    var stayCost = stayPn * nights;                 // assume one room
+    var foodCost = 1000 * riders * (nights + 1);    // days on the road
+    var subtotal = fuelCost + stayCost + foodCost;
+    var buffer   = subtotal * 0.10;
+    var total    = subtotal + buffer;
+
+    $('bk-fuel-l').textContent = 'Fuel · ' + litres.toFixed(1) + ' L';
+    $('bk-fuel').textContent = inr(fuelCost);
+    $('bk-stay').textContent = inr(stayCost);
+    $('bk-food').textContent = inr(foodCost);
+    $('bk-buf').textContent  = inr(buffer);
+    $('p-total').textContent = inr(total);
+    $('p-per').textContent   = inr(total / riders) + ' per rider';
+  }
+
+  function setMode(rt){
+    roundTrip = rt;
+    $('t-return').setAttribute('aria-pressed', rt ? 'true' : 'false');
+    $('t-oneway').setAttribute('aria-pressed', rt ? 'false' : 'true');
+    calc();
+  }
+
+  ['p-riders','p-nights','p-mileage','p-fuel','p-stay'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+  });
+  $('t-oneway').addEventListener('click', function(){ setMode(false); });
+  $('t-return').addEventListener('click', function(){ setMode(true); });
+
+  calc();
+})();
+</script>
+
+</body>
+</html>
 
